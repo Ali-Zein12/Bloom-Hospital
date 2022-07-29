@@ -1,0 +1,24 @@
+{% extends "layout2.html" %}
+
+{% block title %}
+    Donate blood
+{% endblock %}
+
+
+{% block main %}
+<style>
+body {
+  background-image: url('/static/blood_don.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+<br><br><br><br><br>
+<form action="/donate" method="post">
+
+         <h1 style="background-color:Maroon;color:white;text-align:center;bold;font-family:anton,garamond,serif;">You might be the reason to save a human life if you donate your blood.
+         <br>Are you sure about this decision?</h1>
+        <button class="btn btn-primary" type="submit">Donate</button>
+    </form>
+{% endblock %}

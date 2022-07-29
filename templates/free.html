@@ -1,0 +1,20 @@
+{% extends "staff_layout.html" %}
+
+{% block title %}
+    Free schedule
+{% endblock %}
+
+{% block main %}
+      <form action="/free" method="POST">
+            <select name="time_slot">
+            <option disabled selected value="">Time slot</option>
+                <option value="time_slot_1">Time slot 1</option>
+                <option value="time_slot_2">Time slot 2</option>
+                <option value="time_slot_3">Time slot 3</option>
+                <option value="time_slot_4">Time slot 4</option>
+                <option value="time_slot_5">Time slot 5</option>
+                <option value="all">All</option>
+            </select>
+        <button class="btn btn-primary" type="submit">Free schedule</button>
+    </form
+{% endblock %}

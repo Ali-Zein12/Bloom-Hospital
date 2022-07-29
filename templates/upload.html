@@ -1,0 +1,28 @@
+{% extends "staff_layout.html" %}
+
+{% block title %}
+    Find a donor
+{% endblock %}
+
+{% block main %}
+<style>
+body {
+  background-image: url('/static/test.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+     <form action="/upload" method="POST">
+        <div class="mb-3">
+            <select name="patient_name">
+            <option disabled selected value="">Patient</option>
+            {% for patient in patients %}
+                <option value="{{ patient }}">{{ patient}}</option>
+            {% endfor %}
+            <input class="form-control mx-auto w-auto" id="description" name="description" placeholder="Results" type="text">
+            </select>
+            </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+{% endblock %}

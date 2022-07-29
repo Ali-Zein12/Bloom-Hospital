@@ -1,0 +1,55 @@
+{% extends "layout2.html" %}
+
+{% block title %}
+    Homepage
+{% endblock %}
+<style type=text/css>
+
+</style>
+
+
+{% block main %}
+<div>
+    <div class = "leftdiv">
+        <h1>Use <u>/secret</u> in the URL to register a staff member.</h1>
+    </div>
+    <image src="/static/spy3.jpg" width="200" height="200">
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div>
+    <div class = "leftdiv">
+    <h1>You donated blood <u>{{ times }}</u> times. </h1>
+    </div>
+    <image src="/static/blood.jpg" width="200" height="200">
+</div>
+<br><br><br><br><br><br><br><br><br><br><br>
+    <div class = "leftdiv">
+        <h1><u>Reservations</u></h1>
+        </div>
+        <div>
+        <table style="border:1px solid black;margin-left:auto;margin-right:auto;width:100%">
+          <thead>
+              <tr>
+                  <th>Doctor</th>
+                  <th>Time slot</th>
+              </tr>
+          </thead>
+          <tbody>
+              {% for reservation in reservations %}
+                  <tr>
+                      <td>{{ reservation.get("doctor_name") }}</td>
+                      <td>{{ reservation.get("time_slot") }}</td>
+
+                  </tr>
+              {% endfor %}
+          </tbody>
+      </table>
+</div>
+<br><br><br><br><br><br>
+ <div class = "leftdiv">
+        <h1><u>Test Results:</u></h1>
+        </div>
+        <br><br><br>
+        <p style="background-color:#000000;color:white;">{{ description }}</p>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "layout2.html" %}
+
+{% block title %}
+    Available donors
+{% endblock %}
+
+{% block main %}
+ <table style="border:1px solid black;margin-left:auto;margin-right:auto;width:100%">
+          <thead>
+              <tr>
+                  <th>Name</th>
+                  <th>Gender</th>
+                  <th>Phone</th>
+                  <th>Blood Type</th>
+              </tr>
+          </thead>
+          <tbody>
+              {% for row in rows %}
+                  <tr>
+                      <td>{{ row.get("name") }}</td>
+                      <td>{{ row.get("gender") }}</td>
+                      <td>{{ row.get("phone") }}</td>
+                      <td>{{ row.get("blood_type") }}</td>
+                  </tr>
+              {% endfor %}
+          </tbody>
+      </table>
+
+{% endblock %}

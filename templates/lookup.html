@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Lookup Doctors
+{% endblock %}
+
+{% block main %}
+    <form action="/lookup" method="POST">
+        <div class="mb-3">
+            <select name="name">
+            <option disabled selected value="">Doctor</option>
+            {% for doctor in doctors %}
+                <option value="{{ doctor }}">{{ doctor }}</option>
+            {% endfor %}
+            </select>
+        </div>
+        <button class="btn btn-primary" type="submit">lookup</button>
+    </form>
+
+    <div>
+    <footer>
+        <br>
+        <br>
+    </footer></div>
+{% endblock %}

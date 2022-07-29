@@ -1,0 +1,28 @@
+{% extends "staff_layout.html" %}
+
+{% block title %}
+    Find a donor
+{% endblock %}
+
+{% block main %}
+     <table style="border:1px solid black;margin-left:auto;margin-right:auto;width:100%">
+          <thead>
+              <tr>
+                  <th>Patient Name</th>
+                  <th>Time Slot</th>
+
+              </tr>
+          </thead>
+          <tbody>
+              {% for row in rows %}
+                  <tr>
+                      <td>{{ row.get("patient_name") }}</td>
+                      <td>{{ row.get("time_slot") }}</td>
+                  </tr>
+              {% endfor %}
+          </tbody>
+      </table>
+      <form action="/free" method="GET">
+        <button class="btn btn-primary" type="submit">Free schedule</button>
+    </form
+{% endblock %}

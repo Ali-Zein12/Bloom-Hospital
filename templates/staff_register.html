@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Staff Registeration
+{% endblock %}
+
+{% block main %}
+    <form action="/secret" method="POST">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
+            <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
+            <input autocomplete="off" class="form-control mx-auto w-auto" id="password_confirm" name="password_confirm" placeholder="Confirm Password" type="password">
+            <input autocomplete="off" class="form-control mx-auto w-auto" id="name" name="name" placeholder="Name" type="text">
+            <input autocomplete="off" class="form-control mx-auto w-auto" id="gender" name="gender" placeholder="Gender" type="text">
+            <input autocomplete="off" class="form-control mx-auto w-auto" id="date_of_birth" name="date_of_birth" placeholder="Date Of Birth" type="text">
+            <input autocomplete="off" class="form-control mx-auto w-auto" id="phone" name="phone" placeholder="Phone number" type="text">
+            <input autocomplete="off" class="form-control mx-auto w-auto" id="email" name="email" placeholder="Email Address" type="text">
+            <input autocomplete="off" class="form-control mx-auto w-auto" id="address" name="address" placeholder="Address" type="text">
+            <input autocomplete="off" class="form-control mx-auto w-auto" id="specialization" name="specialization" placeholder="Specialization" type="text">
+            <select name="blood_type">
+            <option disabled selected value="">Blood type</option>
+            {% for blood_type in blood_types %}
+                <option value="{{ blood_type }}">{{ blood_type }}</option>
+            {% endfor %}
+            </select>
+
+
+        </div>
+        <button class="btn btn-primary" type="submit">Register</button>
+    </form>
+
+    <div>
+    <footer>
+        <br>
+        <br>
+    <a href="/login">login</a> instead.
+    </footer></div>
+{% endblock %}

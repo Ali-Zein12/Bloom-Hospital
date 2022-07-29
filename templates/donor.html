@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Find a donor
+{% endblock %}
+
+{% block main %}
+    <form action="/donor" method="POST">
+        <div class="mb-3">
+            <select name="blood_type">
+            <option disabled selected value="">Blood type</option>
+            {% for blood_type in blood_types %}
+                <option value="{{ blood_type }}">{{ blood_type }}</option>
+            {% endfor %}
+            </select>
+            </div>
+        <button class="btn btn-primary" type="submit">Find</button>
+    </form>
+    
+
+    <div>
+    <footer>
+        <br>
+        <br>
+    </footer></div>
+{% endblock %}

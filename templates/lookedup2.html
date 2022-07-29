@@ -1,0 +1,55 @@
+
+{% extends "layout2.html" %}
+
+{% block title %}
+    Lookup Doctors
+{% endblock %}
+
+{% block main %}
+ <table style="border:1px solid black;margin-left:auto;margin-right:auto;width:100%">
+          <thead>
+              <tr>
+                  <th>Name</th>
+                  <th>Time Slot 1</th>
+                  <th>Time Slot 2</th>
+                  <th>Time Slot 3</th>
+                  <th>Time Slot 4</th>
+                  <th>Time Slot 5</th>
+
+              </tr>
+          </thead>
+          <tbody>
+              {% for result in results %}
+                  <tr>
+                      <td>{{ result.get("name") }}</td>
+                      {% if result.get("time_slot_1") %}
+                          <td>{{ "Busy" }}</td>
+                      {% else %}
+                          <td>{{ "Free" }}</td>
+                      {% endif %}
+                      {% if result.get("time_slot_2") %}
+                          <td>{{ "Busy" }}</td>
+                      {% else %}
+                          <td>{{ "Free" }}</td>
+                      {% endif %}
+                      {% if result.get("time_slot_3") %}
+                          <td>{{ "Busy" }}</td>
+                      {% else %}
+                          <td>{{ "Free" }}</td>
+                      {% endif %}
+                      {% if result.get("time_slot_4") %}
+                          <td>{{ "Busy" }}</td>
+                      {% else %}
+                          <td>{{ "Free" }}</td>
+                      {% endif %}
+                      {% if result.get("time_slot_5") %}
+                          <td>{{ "Busy" }}</td>
+                      {% else %}
+                          <td>{{ "Free" }}</td>
+                      {% endif %}
+                  </tr>
+              {% endfor %}
+          </tbody>
+      </table>
+
+{% endblock %}
