@@ -35,6 +35,9 @@ def after_request(response):
 
 @app.route("/")
 def index():
+    if 'user_id' not in session:
+        # Redirect or handle the case where user is not logged in
+        return redirect("/login")
     userid = session["user_id"]
     query = db.execute("SELECT * FROM patients WHERE ID = ?", userid)
     staff = bool(query[0]["staff"])
