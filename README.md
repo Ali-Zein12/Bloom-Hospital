@@ -1,4 +1,4 @@
-Bloom Hospital
+The Bloom Hospital website represents the culmination of my work as part of CS50's final project. Where CS50 is a course offered by Harvard University (Introduction To Computer Science)
 #### Video Demo:  <https://youtu.be/D3IffWSjHME>
 #### Description:
 To register a member you just click on register and fill in the details and then click register
